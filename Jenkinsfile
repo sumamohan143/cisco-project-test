@@ -41,10 +41,21 @@ pipeline {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'result.html', reportName: 'Prime number result'])
             }
         }
-        stage('Send email') {
+        /*stage('Send email') {
             steps {
                 emailext body: 'Please find attached the prime number result.', subject: 'Prime number result', attachmentsPattern: 'result.html', to: 'mohan.ram1806@gmail.com'
             }
-        }
+        }*/
+    post {
+     success {
+       emailext (
+        subject: "Prime number result",
+        body: "Please find attached the prime number result.",
+        attachmentsPattern: "result.html",
+        to: "mohan.ram1806@gmail.com",
+        attachLog: true
+      )
+    }
+    }
     }
 }
