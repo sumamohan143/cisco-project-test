@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('PrintDate') {
+        stage('Print Date') {
             steps {
                 sh 'date'
             }
