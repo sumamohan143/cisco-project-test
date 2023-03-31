@@ -38,6 +38,7 @@ pipeline {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'result.html', reportName: 'Prime number result'])
             }
         }
+    }
  
     post {
      success {
@@ -48,7 +49,6 @@ pipeline {
         to: "mohan.ram1806@gmail.com",
         attachLog: true
       )
-    }
     }
     }
 }
