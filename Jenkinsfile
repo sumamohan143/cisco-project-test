@@ -8,10 +8,8 @@ pipeline {
             steps {
                 sh '''
                     #!/bin/bash
-
                     # Get the input number from the Jenkins job parameter
                     num=$Number
-
                     # Check if the number is a prime number
                     is_prime=true
                     if [ $num -le 1 ]; then
@@ -24,7 +22,6 @@ pipeline {
                             fi
                         done
                     fi
-
                     # Print the result
                     if [ $is_prime = true ]; then
                         echo "$num is a prime number."
@@ -41,11 +38,7 @@ pipeline {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'result.html', reportName: 'Prime number result'])
             }
         }
-        /*stage('Send email') {
-            steps {
-                emailext body: 'Please find attached the prime number result.', subject: 'Prime number result', attachmentsPattern: 'result.html', to: 'mohan.ram1806@gmail.com'
-            }
-        }*/
+ 
     post {
      success {
        emailext (
