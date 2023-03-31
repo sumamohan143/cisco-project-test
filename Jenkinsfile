@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Send email') {
             steps {
-                emailext body: 'Please find attached the prime number result.', subject: 'Prime number result', attachmentsPattern: 'result.html', to: 'sumamohan1806@outlook.com'
+                emailext body: 'Please find attached the prime number result.', subject: 'Prime number result', attachmentsPattern: 'result.html', to: 'mohan.ram1806@gmail.com'
             }
         }
     }
