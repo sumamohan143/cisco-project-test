@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Publish HTML file') {
             steps {
-                archiveArtifacts 'result.html'
+                archiveArtifacts artifacts: 'result.html'
             }
         }
     }
