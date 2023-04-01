@@ -8,9 +8,5 @@ pipeline {
             }
         }
     }
-    
-    triggers {
-        pollSCM('*/5 * * * *')
-    }
 }
 
