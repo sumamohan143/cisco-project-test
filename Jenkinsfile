@@ -35,7 +35,12 @@ pipeline {
         }
         stage('Publish HTML file') {
             steps {
-                archiveArtifacts artifacts: 'result.html'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'result.html', reportName: 'Prime number result'])
+            }
+        }
+        stage('Print Date') {
+            steps {
+                sh 'date'
             }
         }
     }
